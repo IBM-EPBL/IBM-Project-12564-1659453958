@@ -1,0 +1,45 @@
+{% extends "layout.jinja2" %}
+
+{% block pagestyles %}
+  <link href="{{ url_for('static', filename='dist/css/dashboard.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.typekit.net/sus7rlu.css">
+{% endblock %}
+
+{% block content %}
+  {% if current_user.is_authenticated %}
+  <div style="display: flex;justify-content:right;">
+    <p>Hi {{ current_user.name }}!</p>
+    <a href="{{ url_for('main_bp.logout') }}">Log out</a>
+  </div>
+  <h1 id="topic">{{ body }}</h1>
+
+  
+  <div class="upload-section">
+
+            <div class="upload-file">
+                <form class = "file-form" action="/success" method="post", enctype="multipart/form-data">
+                    <input class="file-form-input" type="file" , name = "file"/>
+                    <button class="btn btn-success btn-lg">Upload</button> 
+                </form>
+            </div>
+
+            <div class="uploadOR">
+                <span>OR</span>
+            </div>
+
+            <div class="upload-link">
+                <form class = "link-form" action="/success" method="post", enctype="multipart/form-data">
+                    <input class="link-form-input" type="text" ,maxlength="1000" , name = "link" placeholder="Paste the image URL(not the site address)"/>
+                    <button class="btn btn-success btn-lg">Proceed</button> 
+                </form>
+            </div>
+            <div class = "header-content-sub">
+                    <p style = "text-align: center; margin-top: 15px;color: red" class="header-content-info">{{error}}</p>
+            </div>
+            <span>{{error}}</span>
+        </div>
+    
+    
+  {% endif %}
+
+{% endblock %}

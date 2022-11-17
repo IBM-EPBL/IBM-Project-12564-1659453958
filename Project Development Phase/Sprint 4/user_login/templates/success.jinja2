@@ -1,0 +1,46 @@
+{% extends "layout.jinja2" %}
+
+{% block pagestyles %}
+  <link href="{{ url_for('static', filename='dist/css/success.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.typekit.net/sus7rlu.css">
+{% endblock %}
+
+{% block content %}
+  {% if current_user.is_authenticated %}
+  <div id="mainconatiner">
+    <div style="display: flex;justify-content:right;">
+        <p>Hi {{ current_user.name }}!</p>
+        <a href="{{ url_for('main_bp.logout') }}">Log out</a>
+    </div>
+    <h1 id="topic">{{ body }}</h1>
+
+        <div class = "second-main" style = "height: 450px ; width : 40%;margin:auto;background-color:rgb(0, 246, 115);border-radius:10px;">
+                <div class = "header">
+                    <row style = "width: 100% ; display: flex; justify-content: center;">
+                        <h3 class="header-text">Uploaded Image</h3>
+                    </row>
+                    <row style = "width: 100% ; display: flex; justify-content: center;">
+                        <img class = "result-img" src="{{url_for('static', filename = 'images/'+ img)}}">
+                    </row>
+                </div>
+
+                <div class = "info">
+                    <row style = "width: 100% ; display: flex; justify-content: center;">
+                        <h3 class = "header-text">Model Prediction</h3>
+                    </row>
+                    <row style = "width: 100%; display: flex; justify-content: center;color:black;" class="sub-text">
+                        <span>The predicted class is {{ predictions }}</span>
+                    </row>
+                </div>
+                <nav>
+                    <ul style = "padding-right: 3%;" class = ".sub-text">
+                        <span><span style="font-size:20px;color:rgb(35, 0, 231);">Go back to </span><a style="display:contents;text-decoration:underline;float:right;font-size:20px" href ="/">Prediction Page</a></span>                
+                    </ul>
+                </nav>
+        </div>
+    </div>
+    
+    
+  {% endif %}
+
+{% endblock %}

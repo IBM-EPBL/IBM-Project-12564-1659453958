@@ -7,7 +7,7 @@
 
  <br> 
  <h3>IBM-Project-12564-1659453958</h3>  
- Demo Video Link, [Link](https://youtu.be/Q8JWZalA88g)
+ Demo Video Link, https://youtu.be/Q8JWZalA88g
  
  The Application consists of:
  <ul>

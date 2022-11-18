@@ -7,6 +7,22 @@
 
  <br> 
  <h3>IBM-Project-12564-1659453958</h3>  
+ To take a look at the demo video, [Click Here](https://youtu.be/Q8JWZalA88g)
+ 
+ The Application consists of:
+ <ul>
+  <li>Login Page</li>
+  <li>Registration Page</li>
+  <li>Prediction Page (Input/Output)</li>
+ </ul>
+
+<h2> Application workflow:</h2><i>
+✨ Users can register/login to the Application. <br>
+✨ Users are then redirected to the Secure Dashboard in which they can either select an Image or provide the Image Address of the image that will be used for Prediction. <br>
+✨ The input will then be processed by an already trained model which will carry out the prediction process and yields a result with certain confidence. <br>
+✨ The result with the highest confidence along with the input image uploaded will be displayed in the output Page. <br>
+  </i>
+
 
 <h2>📃 About the project:</h2><i>
 ✨ With Diverse people emerges different styles of writing, especially handwritten numbers where the ambiguity is very high and hence the need for  Handwritten digit recongition arises. <br>
